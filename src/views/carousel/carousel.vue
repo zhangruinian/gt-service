@@ -1,53 +1,46 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
-        <h2>Essential Links</h2>
-        <ul>
-            <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-            <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-            <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-            <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-            <br>
-            <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-        </ul>
-        <h2>Ecosystem</h2>
-        <ul>
-            <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-            <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-            <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-            <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-        </ul>
+    <div class="content">
+        <el-carousel :interval="3000000000000" arrow="always" class="carousel">
+            <el-carousel-item class="item">
+                <event></event>
+            </el-carousel-item>
+            <el-carousel-item class="item">
+                <light></light>
+            </el-carousel-item>
+            <el-carousel-item class="item">
+                <best></best>
+            </el-carousel-item>
+        </el-carousel>
     </div>
 </template>
 
 <script>
+    import event from '@/views/carousel/components/event'
+    import light from '@/views/carousel/components/light'
+    import best from '@/views/carousel/components/best'
+
     export default {
-        name: 'hello',
+        name: 'carousel',
         data () {
-            return {
-                msg: 'Welcome to Your Vue.js App'
-            }
+            return {}
+        },
+        components: {
+            event, light, best
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-    h1, h2 {
-        font-weight: normal;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
+<style scoped lang="less">
+    .content {
+        width: 100%;
+        padding: 87px;
+        background-image: linear-gradient(to top, #1493ff, #1461ff);
+        .carousel {
+            height: 100vh;
+            .item {
+                height: 100%;
+            }
+        }
     }
 </style>

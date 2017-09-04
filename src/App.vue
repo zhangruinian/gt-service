@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="container">
         <router-view></router-view>
     </div>
 </template>
@@ -11,9 +11,14 @@
 </script>
 
 <style>
-    #app {
+    *{
+        padding:0;
+        margin: 0;
+    }
+    #container {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        width: 100%;
     }
 </style>
