@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <el-carousel :interval="3000000000000" arrow="always" class="carousel">
+        <el-carousel  :interval='5000' arrow="always" class="carousel" height="100%">
             <el-carousel-item class="item">
                 <event></event>
             </el-carousel-item>
@@ -26,6 +26,8 @@
         },
         components: {
             event, light, best
+        },
+        created () {
         }
     }
 </script>
@@ -34,12 +36,14 @@
 <style scoped lang="less">
     .content {
         width: 100%;
-        padding: 87px;
+        height: 100%;
+        padding: 15px 20px;
         background-image: linear-gradient(to top, #1493ff, #1461ff);
         .carousel {
-            height: 100vh;
+            height: 100%;
             .item {
-                height: 100%;
+                /*height: 100%;
+                width: 100%;*/
             }
         }
     }
